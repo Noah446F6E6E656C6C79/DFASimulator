@@ -34,7 +34,7 @@ public class DFASimulator {
         int currentState = 1;
         //Loop through each character in inputstring
         for(int i = 1; i < inputString.length(); i++){
-            int symbol = inputString.charAt(currentState);
+            int symbol = inputString.charAt(i);
             int character = symbol-'0';
             //update current state using transition table
             currentState = transitionTable[currentState][character];
