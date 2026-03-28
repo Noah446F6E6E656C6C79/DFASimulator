@@ -36,9 +36,9 @@ public class DFASimulator {
         for(int i = 1; i < inputString.length(); i++){
             int symbol = inputString.charAt(currentState);
             int character = symbol-'0';
+            //update current state using transition table
             currentState = transitionTable[currentState][character];
         }
-        //update current state using transition table
         //return true if the final state is in acceptStates, otherwise false
         if(acceptStates.contains(currentState)){
             return true;
@@ -57,7 +57,6 @@ public class DFASimulator {
         //ask user for input string w
         System.out.println("Please input your string: ");
         String string = scanner.nextLine();
-        //call simulator.Simulate(w)
         boolean isAccepted = Simulator.Simulate(string);
         //Print accept or reject based off result
         if(isAccepted){
